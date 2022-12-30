@@ -16,5 +16,5 @@ ansible-galaxy collection install -r requirements.yml
 ### Run playbook
 
 ``` sh
-ansible-playbook -i inventory playbook.yml -c local -K
+./run
 ```
