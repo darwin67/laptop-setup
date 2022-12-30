@@ -1,0 +1,10 @@
+- name: Setup
+  hosts: laptop
+  roles:
+    # pre-requisites
+    - basic
+    - yay
+    - aur
+
+    # setup
+    - browsers

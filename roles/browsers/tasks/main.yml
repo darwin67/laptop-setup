@@ -1,0 +1,13 @@
+- name: Install firefox
+  become: true
+  pacman:
+    name:
+      - firefox
+      - firefox-developer-edition
+
+- name: Install chromnium
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - google-chrome
+      - brave-bin
