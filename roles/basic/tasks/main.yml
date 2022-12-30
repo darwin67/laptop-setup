@@ -22,6 +22,9 @@
       - dhcpcd
       - systemd
 
+      - arc-gtk-theme
+      - arc-solid-gtk-theme
+
 - name: Install fonts
   become: true
   pacman:

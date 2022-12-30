@@ -1,0 +1,4 @@
+- name: Clone Doom Emacs
+  git:
+    repo: https://github.com/doomemacs/doomemacs
+    dest: ~/.emacs.d

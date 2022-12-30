@@ -1,0 +1,11 @@
+- name: Install Sway
+  become: true
+  pacman:
+    name:
+      - sway
+
+- name: Install app indicator
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - libappindicator-gtk3

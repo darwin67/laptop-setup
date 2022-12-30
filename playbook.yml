@@ -7,4 +7,6 @@
     - aur
 
     # setup
+    - sway
     - browsers
+    - editor
