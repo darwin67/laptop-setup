@@ -28,6 +28,18 @@
     - .zsh_plugins.txt
     - .zshrc
 
+- name: Check if Doom Emacs config exists
+  stat:
+    path: ~/.doom.d
+  register: doom_config
+
+- name: Symlink Doom Emacs configs
+  file:
+    src: ~/_config/.doom.d
+    dest: ~/.doom.d
+    state: link
+  when: not doom_config.stat.exists
+
 - name: Symlink neovim
   file:
     src: "~/_config/init.vim"

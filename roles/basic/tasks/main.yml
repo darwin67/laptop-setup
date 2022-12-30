@@ -21,6 +21,8 @@
       - networkmanager
       - dhcpcd
       - systemd
+      - ripgrep
+      - jq
 
       - arc-gtk-theme
       - arc-solid-gtk-theme

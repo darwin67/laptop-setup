@@ -11,3 +11,12 @@
     name:
       - google-chrome
       - brave-bin
+
+- name: Chromnium browser flags
+  template:
+    src: flags.conf
+    dest: "~/.config/{{ item }}"
+    mode: 0644
+  loop:
+    - chrome-flags.conf
+    - brave-flags.conf
