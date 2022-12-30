@@ -7,6 +7,9 @@
     - aur
 
     # setup
+    - config # require SSH key for github
+    - security
+    - hardware
     - sway
     - browsers
     - editor

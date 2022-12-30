@@ -1,0 +1,44 @@
+- name: Clone _config repo
+  git:
+    repo: git@github.com:darwin67/_config.git
+    dest: ~/_config
+
+- name: Prepare directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+  loop:
+    - ~/.config/nvim
+    - ~/.config/sway
+    - ~/.config/waybar
+
+- name: Symlink dot files
+  file:
+    src: "~/_config/{{ item }}"
+    dest: "~/{{ item }}"
+  loop:
+    - .alacritty.yml
+    - .asdfrc
+    - .gitconfig
+    - .gitignore_global
+    - .pryrc
+    - .tmux.conf
+    - .zlogin
+    - .zsh_plugins.txt
+    - .zshrc
+
+- name: Symlink neovim
+  file:
+    src: "~/_config/init.vim"
+    dest: "~/.config/nvim/init.vim"
+
+- name: Symlink Sway configs
+  file:
+    src: "~/_config/{{ item.src }}"
+    dest: "~/.config/{{ item.dest }}"
+  loop:
+    - { src: sway.conf, dest: sway/config }
+    - { src: waybar/config.json, dest: waybar/config }
+    - { src: waybar/mediaplayer.sh, dest: waybar/mediaplayer.sh }
+    - { src: waybar/style.css, dest: waybar/style.css }

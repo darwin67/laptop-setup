@@ -1,0 +1,12 @@
+- name: Install 1Password
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - 1password
+      - 1password-cli
+
+- name: Set ssh config
+  template:
+    src: ssh-config
+    dest: ~/.ssh/config
+    mode: 0644

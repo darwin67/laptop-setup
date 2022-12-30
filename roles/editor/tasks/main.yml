@@ -2,3 +2,9 @@
   git:
     repo: https://github.com/doomemacs/doomemacs
     dest: ~/.emacs.d
+
+- name: Install VS Code
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - visual-studio-code-bin
