@@ -8,17 +8,17 @@
       - grim
       - slurp
 
+      # Brightness control
+      - brightnessctl
+
 - name: Install Sway addons
   kewlfft.aur.aur:
     use: yay
     name:
       - waybar
-
-- name: Install app indicator
-  kewlfft.aur.aur:
-    use: yay
-    name:
       - libappindicator-gtk3
+      - greetd
+      - greetd-gtkgreet
 
 - name: Create local systemd directory
   file:
@@ -39,3 +39,15 @@
     src: /usr/share/sway/scripts/grimshot
     dest: ~/bin/grimshot
     state: link
+
+# Greetd settings
+# https://wiki.archlinux.org/title/Greetd
+- name: Setup greetd config
+  become: true
+  template:
+    src: "greetd/{{ item }}"
+    dest: "/etc/greetd/{{ item }}"
+  loop:
+    - config.toml
+    - environment
+    - sway-config
