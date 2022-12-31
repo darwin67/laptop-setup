@@ -19,3 +19,23 @@
     use: yay
     name:
       - libappindicator-gtk3
+
+- name: Create local systemd directory
+  file:
+    path: ~/.config/systemd/user
+    state: directory
+    recurse: true
+
+- name: Create sway-session.target
+  template:
+    src: sway-session.target
+    dest: ~/.config/systemd/user/sway-session.target
+    mode: 0644
+  notify:
+    - Reload user systemd
+
+- name: Symlink grimshot
+  file:
+    src: /usr/share/sway/scripts/grimshot
+    dest: ~/bin/grimshot
+    state: link

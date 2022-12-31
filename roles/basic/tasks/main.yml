@@ -35,3 +35,8 @@
       - noto-fonts-cjk
       - noto-fonts-emoji
       - noto-fonts-extra
+
+- name: Create user bin directory
+  file:
+    path: ~/bin
+    state: directory
