@@ -3,19 +3,31 @@
   pacman:
     name:
       - sway
+      - swayimg
+
+      # clipboard
+      - wl-clipboard
+      - clipman
 
       # Screenshots
       - grim
       - slurp
 
+      # Screen recorder
+      - wf-recorder
+
       # Brightness control
       - brightnessctl
+
+      # waybar
+      - otf-font-awesome
 
 - name: Install Sway addons
   kewlfft.aur.aur:
     use: yay
     name:
       - waybar
+      - wl-clipboard-history-git
       - libappindicator-gtk3
       - greetd
       - greetd-gtkgreet

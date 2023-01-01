@@ -8,8 +8,5 @@
 
     # setup
     - config # require SSH key for github
-    - security
-    - hardware
+    - common
     - sway
-    - browsers
-    - editor

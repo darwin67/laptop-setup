@@ -1,3 +1,0 @@
-- name: Install fwupdmgr for firmware updates
-  pacman:
-    name: fwupd

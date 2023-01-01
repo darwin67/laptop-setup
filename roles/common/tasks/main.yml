@@ -1,0 +1,82 @@
+- name: Install fwupdmgr for firmware updates
+  pacman:
+    name: fwupd
+
+# Security
+- name: Install 1Password
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - 1password
+      - 1password-cli
+
+- name: Set ssh config
+  template:
+    src: security/ssh-config
+    dest: ~/.ssh/config
+    mode: 0644
+
+# Editors
+- name: Install editor packages
+  pacman:
+    name:
+      - fd
+
+- name: Clone Doom Emacs
+  git:
+    repo: https://github.com/doomemacs/doomemacs
+    dest: ~/.emacs.d
+
+- name: Install VS Code
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - visual-studio-code-bin
+
+# Language
+- name: Install fcitx5 for language setup
+  pacman:
+    name:
+      - fcitx5
+      - fcitx5-mozc
+      - fcitx5-rime
+      - fcitx5-configtool
+      - fcitx5-gtk
+      - fcitx5-qt
+
+      # Chinese
+      - rime-pinyin-zhwiki
+      - rime-luna-pinyin
+      - rime-pinyin-simp
+
+- name: Configure fcitx5
+  template:
+    src: "fcitx5/{{ item }}"
+    dest: "~/.config/fcitx5/{{ item }}"
+  loop:
+    - config
+    - profile
+
+# Browsers
+- name: Install firefox
+  become: true
+  pacman:
+    name:
+      - firefox
+      - firefox-developer-edition
+
+- name: Install chromnium
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - google-chrome
+      - brave-bin
+
+- name: Chromnium browser flags
+  template:
+    src: browsers/chromnium-flags.conf
+    dest: "~/.config/{{ item }}"
+    mode: 0644
+  loop:
+    - chrome-flags.conf
+    - brave-flags.conf
