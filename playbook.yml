@@ -5,6 +5,6 @@
     - pre
 
     # setup
-    - config # require SSH key for github
     - common
     - sway
+    - config # require SSH key for github

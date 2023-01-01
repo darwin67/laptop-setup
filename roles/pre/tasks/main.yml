@@ -8,21 +8,14 @@
       - linux
       - linux-lts
       - linux-firmware
-      - zsh
-      - neovim
-      - vim
-      - git
       - sudo
       - efibootmgr
       - dialog
       - wpa_supplicant
-      - tmux
       - intel-ucode
       - networkmanager
       - dhcpcd
       - systemd
-      - ripgrep
-      - jq
 
       # Theme
       - arc-gtk-theme

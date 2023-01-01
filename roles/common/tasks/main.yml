@@ -1,6 +1,14 @@
 - name: Install fwupdmgr for firmware updates
   pacman:
-    name: fwupd
+    name:
+      - fwupd
+      - zsh
+      - neovim
+      - vim
+      - git
+      - tmux
+      - ripgrep
+      - jq
 
 # Security
 - name: Install 1Password
