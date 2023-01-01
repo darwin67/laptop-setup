@@ -38,9 +38,15 @@
     state: directory
     recurse: true
 
+- name: Create systemd user conf
+  become: true
+  template:
+    src: sway/50-systemd-user.conf
+    dest: /etc/sway/config.d/50-systemd-user.conf
+
 - name: Create sway-session.target
   template:
-    src: sway-session.target
+    src: sway/session.target
     dest: ~/.config/systemd/user/sway-session.target
     mode: 0644
   notify:
