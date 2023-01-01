@@ -2,9 +2,7 @@
   hosts: laptop
   roles:
     # pre-requisites
-    - basic
-    - yay
-    - aur
+    - pre
 
     # setup
     - config # require SSH key for github
