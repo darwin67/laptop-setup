@@ -4,6 +4,12 @@
     name:
       - sway
       - swayimg
+      - waybar
+      - wofi
+      - xorg-xwayland
+      - xorg-xlsclients
+      - qt5-wayland
+      - glfw-wayland
 
       # clipboard
       - wl-clipboard
@@ -26,7 +32,6 @@
   kewlfft.aur.aur:
     use: yay
     name:
-      - waybar
       - wl-clipboard-history-git
       - libappindicator-gtk3
       - greetd

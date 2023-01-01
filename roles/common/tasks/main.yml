@@ -9,6 +9,7 @@
       - tmux
       - ripgrep
       - jq
+      - alacritty
 
 # Security
 - name: Install 1Password
