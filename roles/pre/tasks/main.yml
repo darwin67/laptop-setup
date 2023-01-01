@@ -39,20 +39,17 @@
     repo: https://aur.archlinux.org/yay.git
     dest: /usr/local/src/yay
 
-- name: Change repo directory owner
-  become: true
-  file:
-    path: /usr/local/src/yay
-    state: directory
-    recurse: yes
-    owner: darwin
-    group: darwin
-
 - name: Install yay
   command:
     cmd: makepkg -sfi --noconfirm
     chdir: /usr/local/src/yay
     creates: /usr/bin/yay
+  notify:
+    - Change repo directory owner
+
+# Run handlers immediately if there are any already notified
+- name: Flush handlers
+  meta: flush_handlers
 
 - name: Create the `aur_builder` user
   become: true

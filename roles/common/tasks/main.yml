@@ -82,7 +82,7 @@
 
 - name: Chromnium browser flags
   template:
-    src: browsers/chromnium-flags.conf
+    src: browser/chromnium-flags.conf
     dest: "~/.config/{{ item }}"
     mode: 0644
   loop:
