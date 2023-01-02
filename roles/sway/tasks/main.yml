@@ -4,6 +4,9 @@
     name:
       - sway
       - swayimg
+      - swayidle
+      - swaylock
+
       - waybar
       - wofi
       - xorg-xwayland

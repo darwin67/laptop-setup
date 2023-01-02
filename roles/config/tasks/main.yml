@@ -5,14 +5,15 @@
 
 - name: Prepare directories
   file:
-    path: "{{ item }}"
+    path: "~/.config/{{ item }}"
     state: directory
     recurse: yes
   loop:
-    - ~/.config/nvim
-    - ~/.config/sway
-    - ~/.config/waybar
-    - ~/.config/wofi
+    - nvim
+    - sway
+    - waybar
+    - wofi
+    - wob
 
 - name: Symlink dot files
   file:
@@ -58,3 +59,4 @@
     - { src: waybar/style.css, dest: waybar/style.css }
     - { src: wofi/config, dest: wofi/config }
     - { src: wofi/style.css, dest: wofi/style.css }
+    - { src: wob/wob.ini, dest: wob/wob.ini }
