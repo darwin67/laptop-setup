@@ -37,9 +37,10 @@
     name:
       - wl-clipboard-history-git
       - libappindicator-gtk3
-      - greetd
+      - greetd # login manager
       - greetd-gtkgreet
-      - sirula
+      - sirula # app launcher
+      - swaync # notification daemon
 
 - name: Create local systemd directory
   file:
