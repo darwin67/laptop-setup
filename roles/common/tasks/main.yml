@@ -10,6 +10,7 @@
       - ripgrep
       - jq
       - alacritty
+      - copyq
 
 # Security
 - name: Install 1Password

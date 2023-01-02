@@ -5,7 +5,6 @@
       - sway
       - swayimg
       - swayidle
-      - swaylock
 
       - waybar
       - wofi
@@ -16,7 +15,6 @@
 
       # clipboard
       - wl-clipboard
-      - clipman
 
       # Screenshots
       - grim
@@ -31,14 +29,14 @@
       # waybar
       - otf-font-awesome
 
-- name: Install Sway addons
+- name: Install Sway related packages (AUR)
   kewlfft.aur.aur:
     use: yay
     name:
-      - wl-clipboard-history-git
       - libappindicator-gtk3
       - greetd # login manager
       - greetd-gtkgreet
+      - swaylock-effects # lock screen
       - sirula # app launcher
       - swaync # notification daemon
 
