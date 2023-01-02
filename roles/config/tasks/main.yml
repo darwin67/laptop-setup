@@ -14,6 +14,7 @@
     - waybar
     - wofi
     - wob
+    - sirula
 
 - name: Symlink dot files
   file:
@@ -60,3 +61,5 @@
     - { src: wofi/config, dest: wofi/config }
     - { src: wofi/style.css, dest: wofi/style.css }
     - { src: wob/wob.ini, dest: wob/wob.ini }
+    - { src: sirula/config.toml, dest: sirula/config.toml }
+    - { src: sirula/style.css, dest: sirula/style.css }

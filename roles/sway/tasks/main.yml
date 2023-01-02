@@ -39,6 +39,7 @@
       - libappindicator-gtk3
       - greetd
       - greetd-gtkgreet
+      - sirula
 
 - name: Create local systemd directory
   file:
