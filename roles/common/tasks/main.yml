@@ -35,6 +35,7 @@
   git:
     repo: https://github.com/doomemacs/doomemacs
     dest: ~/.emacs.d
+    update: false
 
 - name: Install VS Code
   kewlfft.aur.aur:

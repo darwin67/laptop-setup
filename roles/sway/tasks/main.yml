@@ -81,3 +81,10 @@
     - config.toml
     - environment
     - sway-config
+    - gtkgreet.css
+
+- name: Enable greetd
+  become: true
+  systemd:
+    name: greetd
+    enabled: true
