@@ -12,6 +12,23 @@
       - alacritty
       - copyq
 
+      # Programming language setup
+      #   Ruby, Python, Erlang
+      - libffi
+      - libyaml
+      - openssl
+      - zlib
+      - xz
+      # https://github.com/asdf-vm/asdf-erlang
+      - ncurses
+      - glu
+      - mesa
+      - libpng
+      - libssh
+      - unixodbc
+      - libxslt
+      - fop
+
 # Security
 - name: Install 1Password
   kewlfft.aur.aur:
