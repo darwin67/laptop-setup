@@ -29,6 +29,12 @@
       - libxslt
       - fop
 
+- name: Clone elixir-ls repo
+  git:
+    repo: git@github.com:elixir-lsp/elixir-ls.git
+    dest: ~/workspace/elixir-ls
+    update: false
+
 # Security
 - name: Install 1Password
   kewlfft.aur.aur:
