@@ -1,4 +1,5 @@
-- name: Install fwupdmgr for firmware updates
+- name: Install commonly used packages
+  become: true
   pacman:
     name:
       - fwupd
@@ -51,6 +52,7 @@
 
 # Editors
 - name: Install editor packages
+  become: true
   pacman:
     name:
       - fd
@@ -69,6 +71,7 @@
 
 # Language
 - name: Install fcitx5 for language setup
+  become: true
   pacman:
     name:
       - fcitx5

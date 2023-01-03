@@ -12,6 +12,7 @@
       - xorg-xlsclients
       - qt5-wayland
       - glfw-wayland
+      - archlinux-wallpaper
 
       # clipboard
       - wl-clipboard
@@ -39,7 +40,7 @@
     name:
       - libappindicator-gtk3
       - greetd # login manager
-      - greetd-gtkgreet
+      - greetd-gtkgreet-git
       - swaylock-effects # lock screen
       - sirula # app launcher
       - swaync # notification daemon
