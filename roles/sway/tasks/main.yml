@@ -12,6 +12,7 @@
       - xorg-xlsclients
       - qt5-wayland
       - glfw-wayland
+
       - archlinux-wallpaper
 
       # clipboard
@@ -28,7 +29,8 @@
       # Screen recorder
       - wf-recorder
 
-      # Brightness control
+      # Controls
+      - playerctl
       - brightnessctl
 
       # waybar
@@ -44,6 +46,8 @@
       - swaylock-effects # lock screen
       - sirula # app launcher
       - swaync # notification daemon
+      - wob # wob
+      - wev # event debugging
 
 - name: Create local systemd directory
   file:
