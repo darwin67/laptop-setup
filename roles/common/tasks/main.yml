@@ -13,6 +13,13 @@
       - alacritty
       - copyq
 
+      # file manager
+      - thunar
+      - tumbler
+      - thunar-volman
+      - thunar-archive-plugin
+      - thunar-media-tags-plugin
+
       # Programming language setup
       #   Ruby, Python, Erlang
       - libffi
