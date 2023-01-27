@@ -20,6 +20,9 @@
       - thunar-archive-plugin
       - thunar-media-tags-plugin
 
+      # bluetooth UI
+      - blueberry
+
       # Programming language setup
       #   Ruby, Python, Erlang
       - libffi
