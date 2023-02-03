@@ -12,15 +12,17 @@
       - jq
       - alacritty
       - copyq
+      - fd
 
-      # file manager
+      ## System
+      # Files
       - thunar
       - tumbler
       - thunar-volman
       - thunar-archive-plugin
       - thunar-media-tags-plugin
 
-      # bluetooth UI
+      # Bluetooth
       - blueberry
 
       # Programming language setup
@@ -40,50 +42,14 @@
       - libxslt
       - fop
 
-- name: Clone elixir-ls repo
-  git:
-    repo: git@github.com:elixir-lsp/elixir-ls.git
-    dest: ~/workspace/elixir-ls
-    update: false
+      ## Social
+      - discord
 
-# Security
-- name: Install 1Password
-  kewlfft.aur.aur:
-    use: yay
-    name:
-      - 1password
-      - 1password-cli
+      ## Browser
+      - firefox
+      - firefox-developer-edition
 
-- name: Set ssh config
-  template:
-    src: security/ssh-config
-    dest: ~/.ssh/config
-    mode: 0644
-
-# Editors
-- name: Install editor packages
-  become: true
-  pacman:
-    name:
-      - fd
-
-- name: Clone Doom Emacs
-  git:
-    repo: https://github.com/doomemacs/doomemacs
-    dest: ~/.emacs.d
-    update: false
-
-- name: Install VS Code
-  kewlfft.aur.aur:
-    use: yay
-    name:
-      - visual-studio-code-bin
-
-# Language
-- name: Install fcitx5 for language setup
-  become: true
-  pacman:
-    name:
+      ## Language
       - fcitx5
       - fcitx5-mozc
       - fcitx5-rime
@@ -96,6 +62,44 @@
       - rime-luna-pinyin
       - rime-pinyin-simp
 
+- name: Install commonly used packages - AUR
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      ## Security
+      - 1password
+      - 1password-cli
+
+      ## Editor
+      - visual-studio-code-bin
+
+      ## Browser
+      - google-chrome
+      - brave-bin
+
+      ## Social
+      - whatsapp-for-linux
+
+- name: Clone Doom Emacs
+  git:
+    repo: https://github.com/doomemacs/doomemacs
+    dest: ~/.emacs.d
+    update: false
+
+- name: Clone elixir-ls repo
+  git:
+    repo: git@github.com:elixir-lsp/elixir-ls.git
+    dest: ~/workspace/elixir-ls
+    update: false
+
+# Security
+- name: Set ssh config
+  template:
+    src: security/ssh-config
+    dest: ~/.ssh/config
+    mode: 0644
+
+# Language
 - name: Configure fcitx5
   template:
     src: "fcitx5/{{ item }}"
@@ -111,20 +115,6 @@
     dest: /etc/environment
 
 # Browsers
-- name: Install firefox
-  become: true
-  pacman:
-    name:
-      - firefox
-      - firefox-developer-edition
-
-- name: Install chromnium
-  kewlfft.aur.aur:
-    use: yay
-    name:
-      - google-chrome
-      - brave-bin
-
 - name: Chromnium browser flags
   template:
     src: browser/chromnium-flags.conf
