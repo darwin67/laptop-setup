@@ -25,6 +25,10 @@
       # Bluetooth
       - blueberry
 
+      # Battery management
+      - tlp
+      - tlp-rdw
+
       # Programming language setup
       #   Ruby, Python, Erlang
       - libffi
@@ -79,6 +83,32 @@
 
       ## Social
       - whatsapp-for-linux
+
+# Battery related services
+- name: Enable TLP related services
+  become: true
+  systemd:
+    name: tlp
+    enabled: true
+
+- name: Enable NetworkManager-dispatcher service
+  become: true
+  systemd:
+    name: NetworkManager-dispatcher
+    enabled: true
+
+# https://linrunner.de/tlp/installation/arch.html#service-units
+- name: Mask rfkill to avoid conflict with TLP
+  become: true
+  systemd:
+    name: systemd-rfkill
+    masked: true
+
+- name: Mask rfkill.socket to avoid conflict with TLP
+  become: true
+  systemd:
+    name: systemd-rfkill.socket
+    masked: true
 
 - name: Clone Doom Emacs
   git:
