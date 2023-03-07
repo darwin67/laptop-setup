@@ -74,6 +74,9 @@
       - 1password
       - 1password-cli
 
+      ## File management
+      - insync
+
       ## Editor
       - visual-studio-code-bin
 
@@ -153,3 +156,18 @@
   loop:
     - chrome-flags.conf
     - brave-flags.conf
+# File management
+- name: Install systemd service for Insync
+  become: true
+  template:
+    src: insync/systemd.service
+    dest: /usr/lib/systemd/user/insync.service
+    mode: 0644
+
+- name: Start and enable Insync service
+  systemd:
+    name: insync
+    scope: user
+    state: started
+    enabled: true
+    daemon_reload: true
