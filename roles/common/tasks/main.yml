@@ -31,6 +31,7 @@
 
       # Programming language setup
       #   Ruby, Python, Erlang
+      - emacs-nativecomp
       - libffi
       - libyaml
       - openssl
