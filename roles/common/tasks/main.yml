@@ -10,6 +10,7 @@
       - tmux
       - ripgrep
       - jq
+      - yq # similar to jq but also handles YAML, XML, etc
       - alacritty
       - copyq
       - fd
