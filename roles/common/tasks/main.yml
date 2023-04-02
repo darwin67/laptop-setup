@@ -72,6 +72,9 @@
   kewlfft.aur.aur:
     use: yay
     name:
+      ## System
+      - appmenu-gtk-module
+
       ## Security
       - 1password
       - 1password-cli
