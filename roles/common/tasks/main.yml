@@ -48,6 +48,17 @@
       - libxslt
       - fop
 
+      # LSPs
+      - gopls
+      - typescript-language-server
+      - rust-analyzer
+      - yaml-language-server
+      - vscode-json-languageserver
+      - vscode-css-languageserver
+      - vscode-html-languageserver
+      # not available on arch yet
+      # - vscode-markdown-languageserver
+
       ## Social
       - discord
 
@@ -84,6 +95,10 @@
 
       ## Editor
       - visual-studio-code-bin
+
+      ## LSPs - requires asdf bypass
+      - elixir-ls
+      - vscode-eslint-language-server
 
       ## Browser
       - google-chrome
