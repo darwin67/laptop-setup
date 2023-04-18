@@ -16,6 +16,10 @@
       - fd
 
       ## System
+      # Shell
+      - starship
+      - ttf-font-nerd
+
       # Files
       - thunar
       - tumbler

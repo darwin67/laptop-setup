@@ -55,6 +55,7 @@
     state: link
   loop:
     - { src: sway.conf, dest: sway/config }
+    - { src: starship.toml, dest: starship.toml }
     - { src: waybar/config.json, dest: waybar/config }
     - { src: waybar/mediaplayer.sh, dest: waybar/mediaplayer.sh }
     - { src: waybar/style.css, dest: waybar/style.css }
