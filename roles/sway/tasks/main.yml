@@ -5,6 +5,7 @@
       - sway
       - swayimg
       - swayidle
+      - swaybg
 
       - waybar
       - wofi
@@ -12,6 +13,7 @@
       - xorg-xlsclients
       - qt5-wayland
       - glfw-wayland
+      - wallutils
 
       - archlinux-wallpaper
 
