@@ -143,12 +143,6 @@
     dest: ~/.emacs.d
     update: false
 
-- name: Clone elixir-ls repo
-  git:
-    repo: git@github.com:elixir-lsp/elixir-ls.git
-    dest: ~/workspace/elixir-ls
-    update: false
-
 # Security
 - name: Set ssh config
   template:
