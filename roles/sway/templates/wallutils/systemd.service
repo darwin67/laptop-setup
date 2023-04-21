@@ -1,0 +1,12 @@
+[Unit]
+Description=Dynamic Wallpaper
+After=local-fs.target network.target
+
+[Service]
+Environment=THEME=Fuji
+Type=simple
+ExecStart=/usr/bin/settimed $THEME
+ExecStop=/usr/bin/pkill settimed
+
+[Install]
+WantedBy=default.target

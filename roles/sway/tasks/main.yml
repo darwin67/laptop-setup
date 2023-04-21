@@ -84,6 +84,21 @@
     dest: ~/bin/grimshot
     state: link
 
+- name: Install systemd service for Dynamic Wallpaper
+  become: true
+  template:
+    src: wallutils/systemd.service
+    dest: /usr/lib/systemd/user/dwall.service
+    mode: 0644
+
+- name: Start and enable Dynamic Wallpaper service
+  systemd:
+    name: dwall
+    scope: user
+    state: started
+    enabled: true
+    daemon_reload: true
+
 # Greetd settings
 # https://wiki.archlinux.org/title/Greetd
 - name: Setup greetd config
