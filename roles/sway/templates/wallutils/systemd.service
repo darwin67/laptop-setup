@@ -3,9 +3,8 @@ Description=Dynamic Wallpaper
 After=local-fs.target network.target
 
 [Service]
-Environment=THEME=Fuji
 Type=simple
-ExecStart=/usr/bin/settimed $THEME
+ExecStart=/usr/bin/settimed "{{ theme }}"
 ExecStop=/usr/bin/pkill settimed
 
 [Install]

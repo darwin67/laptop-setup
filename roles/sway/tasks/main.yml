@@ -84,12 +84,46 @@
     dest: ~/bin/grimshot
     state: link
 
+- name: Dynamic Wallpaper directory
+  file:
+    state: directory
+    path: ~/Pictures/DynamicWallpapers
+    recurse: true
+
+- name: Download Dynamic Wallpapers
+  get_url:
+    url: "{{ item.src }}"
+    dest: "~/Pictures/DynamicWallpapers/{{ item.filename }}"
+  loop:
+    - src: "https://cdn.dynamicwallpaper.club/wallpapers/a9q1jiy0cu/%22Desert%20Sands%22%20by%20Louis%20Coyle.heic"
+      filename: DesertSands.heic
+    - src: "https://cdn.dynamicwallpaper.club/wallpapers/f8jzf4ugy8/Mojave%20XP.heic"
+      filename: Mojave.heic
+    - src: "https://cdn.dynamicwallpaper.club/wallpapers/hqzkn6nai0f/earth%20.heic"
+      filename: Earth.heic
+    - src: "https://cdn.dynamicwallpaper.club/wallpapers/ze2isquaf7n/Tech%20Factory.heic"
+      filename: TechFactory.heic
+    - src: "https://cdn.dynamicwallpaper.club/wallpapers/v5y04cx6k9k/Catalina.heic"
+      filename: Catalina.heic
+    - src: "https://cdn.dynamicwallpaper.club/wallpapers/s3uyjbhvnma/New%20Ipad%202018.heic"
+      filename: iPad2018.heic
+    - src: "https://cdn.dynamicwallpaper.club/wallpapers/boc339cw3n/Big%20macOS%20Sur.heic"
+      filename: macBigSur.heic
+    - src: "https://cdn.dynamicwallpaper.club/wallpapers/la4wfuwtkg/macOS%20Monterey.heic"
+      filename: macMonterey.heic
+    - src: "https://cdn.dynamicwallpaper.club/wallpapers/gpf7f97jk3b/Fuji.heic"
+      filename: Fuji.heic
+
 - name: Install systemd service for Dynamic Wallpaper
   become: true
   template:
     src: wallutils/systemd.service
     dest: /usr/lib/systemd/user/dwall.service
     mode: 0644
+  notify:
+    - Restart Dynamic Wallpapers
+  vars:
+    theme: macBigSur
 
 - name: Start and enable Dynamic Wallpaper service
   systemd:
@@ -97,7 +131,6 @@
     scope: user
     state: started
     enabled: true
-    daemon_reload: true
 
 # Greetd settings
 # https://wiki.archlinux.org/title/Greetd
